@@ -1,0 +1,226 @@
+
+<div class="container" >
+  <form [formGroup]="FormularioSocio">
+    <div class="row" >
+          <!--Ingreso del detalle de la informacion-->
+        <div class="col-sm" >
+          <h4> <strong><label   style="color:#972107" >TARJETA DE DÉBITO</label></strong></h4>
+                <img src="../assets/imagenes/tarjeta.png" class="img-thumbnail" alt="...">
+          <h4> <strong><label   style="color:#972107" >TARJETA DE DÉBITO</label></strong></h4>
+              <div class="float-start" style="text-align:justify; color:dimgray" class="form-control-sm" >
+                Con nuestra tarjeta de débito accede a los servicios de nuestra red de cajeros
+                automáticos en todo el pais, además realiza retiros en los cajeros de BANRED.
+              </div><br>
+          <h4> <strong><label  style="color:#972107">BENEFICIOS PARA EL SOCIO </label></strong></h4>
+
+                <div class="float-start form-control-sm" style="text-align: justify; color:dimgray">
+                                  <ul>
+                                    <li>Retiro sin costo en cajeros propios de la Cooperativa</li>
+                                    <li>Disposición de su dinero las 24 h del día</li>
+                                    <li>Retiro en ATMS propios $500 diarios. Retiro en ATMS de la red $300 diarios</li>
+                                    <li>Acceso a toda la red de cajeros Banred</li>
+                                  </ul>
+                </div><br><br>
+            <h4> <strong><label style="color:#972107" >BENEFICIOS DEL SERVICIO DE TARJETA PROTEJIDA</label></strong></h4>
+                <div class="float-start form-control-sm" style="text-align: justify; color:dimgray">
+                  <ul>
+                      <li>Seguro de tarjeta para retiros por robo o clonación costo mensual $0,67</li>
+                      <li>Cobertura hasta $900.00 por evento, y 1200.00 anuales</li>
+                  </ul>
+                </div><br><br><br><br>
+
+                <div >
+                  <img src="" class="" alt="">
+                </div>
+
+        </div>
+        <div class="col-sm" style="background-color:#FCF6F5;">
+
+              <h4 style="text-align: center;">
+                <strong><label   style="color:#972107" >SOLICITUD TARJETA DE DÉBITO</label></strong>
+              </h4>
+              <div class="input-group mb-2"   >
+                <label  class="col-sm-2 col-form-label" style="color:#972107; height: 1cm ;">Cédula:</label>
+                <!--input  type="text" class="form-control form-control-sm"  placeholder="17XXXXX6" [(ngModel)]="art.cedula" >-->
+                        <input
+                        type="text"
+                        class="form-control"
+                        formControlName="ci"
+                        maxlength="10"
+                        placeholder="17XXXXX6"
+                        style="font-family:'Oxygen', 'Source Sans Pro', sans-serif;"
+
+                        />
+
+
+
+                <label    class="col-sm-3 col-form-label form-control-sm" style="color:#972107;height: 1cm">&nbsp;&nbsp;Huella Dáctilar:</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        maxlength="10"
+                        formControlName="huelladactilar"
+                        placeholder="VXXXXXX89"
+                        />
+
+
+              </div>
+
+                <div>
+                <span *ngIf="this.FormularioSocio.get('ci').errors?.required && this.FormularioSocio.get('huelladactilar').errors?.required" style="color:darkgray;" >
+                  El campo Cédula  no puede ir vacio y debe tener maximo un 10 caracteres
+                </span><br>
+                <span *ngIf=" this.FormularioSocio.get('huelladactilar').errors?.required" style="color:darkgray;" >
+                  El campo  Huella Dactilar no puede ir vacio y debe tener maximo un 10 caracteres
+                </span>
+
+
+
+                </div>
+
+
+              <div >
+                <label    class="col-sm-6 col-form-label form-control-sm" style="color:#972107;">Nombres y Apellidos</label>
+                  <div >
+                    <input style="font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369; size: 1cm;width: 14.5cm;"
+                        type="text"
+                        class="form-control"
+                        formControlName="nombresApellidos"
+                        placeholder=" "
+
+                        />
+                  </div>
+              </div>
+
+              <div class="p-fluid input-group mb-2">
+                <div class="p-field p-grid">
+                    <label   class="col-sm-3 col-form-label form-control-sm" style="color:#972107;">Celular</label>
+                    <div class="p-col-2 p-md-1 " >
+                        <input style="width: 7cm; font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369; "
+                        type="text"
+                        class="form-control"
+                        formControlName="celular"
+                        placeholder=" "  >
+                    </div>
+                </div>
+
+
+                <div class="p-field p-grid">
+                    <label class="col-form-label form-control-sm" style="color:#972107;">Correo Electronico</label>
+                    <div class="p-md-1 ">
+                        <input style="width: 7cm; font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369;"
+                               type="text"
+                               class="form-control"
+                               formControlName="email"
+                               placeholder=" " >
+                </div>
+              </div>
+
+              <div class="p-fluid input-group mb-2">
+                <div class="p-field p-grid">
+                  <label   class="col-sm-3 col-form-label form-control-sm" style="color:#972107;">Nacionalidad</label>
+                  <div class="p-col-2 p-md-1 " >
+                      <input style="width: 7cm;font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369;"
+                      type="text"
+                      class="form-control"
+                      formControlName="nacionalidad"
+                      placeholder=" "  >
+                  </div>
+              </div> &nbsp;
+
+
+              <div class="p-field p-grid">
+                  <label class="col-form-label form-control-sm" style="color:#972107;">Estado Civil</label>
+                  <div class="p-md-1 ">
+                      <input style="width: 7cm;font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369;"
+                             type="text"
+                             class="form-control"
+                             formControlName="estadocivil"
+                             placeholder=" " >
+                    </div>
+              </div>
+              <div >
+                <label    class="col-sm-12 col-form-label form-control-sm" style="color:#972107;">Nombres que desea en su tarjeta</label>
+                  <div >
+                    <input style="font-family:'Oxygen', 'Source Sans Pro', sans-serif; color: #5f6369; size: 1cm;width: 14.5cm;"
+                        type="text"
+                        class="form-control"
+                        formControlName="nombresApellidostarj"
+                        placeholder=" "
+                        />
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-fluid input-group mb-2">
+             <!--Listado de Agencias-->
+            <div class="p-field p-grid">
+              <label  class="col-sm-12 col-form-label form-control-sm" style="color:#972107;" >Agencia de entrega </label>
+              <div class="col-sm-10" ng- >
+                <select class="custom-select my-1 mr-sm-10 form-control-sm" formControlName="listargencias">
+                  <option value="" style="color: dimgrey;">Elige una opción</option>
+                <option *ngFor="let agencia of agencias" >{{agencia.descripcion}}</option>
+                </select>
+              </div>
+
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--Listado de Estados-->
+            <div class="p-field p-grid">
+              <label  class="col-sm-12 col-form-label form-control-sm" style="color:#972107;" >Tipo Estados </label>
+                <div class="col-sm-10" ng- >
+                  <select class="custom-select my-1 mr-sm-10 form-control-sm" formControlName="listarestados">
+                    <option value="">Elige una opción</option>
+                  <option *ngFor="let estado of estados" >{{estado.descripcion}}</option>
+                  </select>
+                </div>
+            </div>
+            <!--Seguro-->
+
+
+
+          </div>
+        <div >
+          <label  class="col-sm-12 col-form-label form-control-sm" style="color:#972107;" >Desea seguro </label>
+          <!--Seguro-->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="si" >
+            <label class="form-check-label" for="inlineRadio1">Si</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="no" checked>
+            <label class="form-check-label" for="inlineRadio2">No</label>
+          </div>
+
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-danger "
+            style="background-color: #972107; color: white ;right: inherit;"
+            type="button"
+            
+            (click)="obtenerInfoEmail()">
+                ENVIAR SOLICITUD
+      </button>
+       </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </div>
+  </form>
+</div>
